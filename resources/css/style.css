@@ -1,0 +1,940 @@
+/* Vh
+Resize the height of the browser window to see how the font-size of h1 changes.
+1vh = 1% of viewport height.
+*/
+
+/* Blok element dan inline e */
+
+/* Btn link: alamat sebelum di kunjungi dan visited : sesudah */
+
+/* inline : tidak bisa mengatur lebar dan tinggi  dan inline-block : bisa */
+
+/* line-height: jarak antar line (enter) 145% */
+
+/* ------------------------------------------------------- */
+/* BASIC SETUP */
+/* ------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: white;
+  color: rgb(99, 99, 99);
+  font-size: 20px;
+
+  /* Jenis fonrt */
+  font-family: "Lato", "Arial", "sans-serif";
+  /* Ukuran font */
+  font-weight: 400;
+  /* Rendering font sempurna */
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* ------------------------------------------------------- */
+/* REUSABLE COMPONENETS */
+/* ------------------------------------------------------- */
+
+.row {
+  /* Lebar Halaman Website PC */
+
+  max-width: 1140px;
+  /* Atas, bawah dan Kiri, kanan */
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.box {
+  padding: 5px;
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+/* ---- HEADINGS ---- */
+h1,
+h2,
+h3 {
+  /* margin-top: 0; */
+  /* Merubah bentuk text */
+  text-transform: uppercase;
+  z-index: 10;
+  /* Spasi antara kata */
+  font-weight: 400;
+}
+
+h1 {
+  color: rgb(255, 251, 240);
+  /* Ukuran global font 20px, font-size dari 200%nya font global  */
+  /* font-size: 240%; */
+  font-size: 170%;
+  margin-bottom: 20px;
+  word-spacing: 4px;
+  /* Spasi antara huruf */
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 180%;
+  text-align: center;
+  margin-bottom: 30px;
+  word-spacing: 2px;
+  /* Spasi antara huruf */
+  letter-spacing: 1px;
+}
+
+/* Menambah content sesudah h2 */
+h2:after {
+  display: block;
+  height: 2px;
+  width: 100px;
+  background-color: #d6b161;
+  content: " ";
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 80%;
+  margin-bottom: 15px;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 100%;
+  margin-bottom: 30px;
+  color: rgb(255, 251, 240);
+  text-transform: capitalize;
+  line-height: 160%;
+}
+
+.section-feature .long-copy {
+  margin-bottom: 30px;
+}
+
+/* ---- PARAGRAPHS ---- */
+
+.long-copy {
+  /* background-color: #d6b161; */
+  line-height: 150%;
+  /* Lebar Seluruh Halaman 100% */
+  /* Terpakai 70%, sisah 30% */
+  width: 70%;
+  /* Untuk membuat rata tengah 30%/2 = 15% */
+  margin-left: 15%;
+  text-align: center;
+  /* text-transform: capitalize; */
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+  text-align: justify;
+}
+
+/* ---- ICONS ---- */
+
+.big-icon {
+  font-size: 300%;
+  display: block;
+  color: #d6b161;
+  margin-bottom: 10px;
+}
+
+.icon-small {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: #d6b161;
+  font-size: 120%;
+
+  line-height: 120%;
+  vertical-align: middle;
+  /* Margin -(minus) untuk mengatur elemen naik turun */
+  margin-top: -5px;
+}
+
+/* ---- LINKS ---- */
+a:link,
+a:visited {
+  color: #d6b161;
+  text-decoration: none;
+  border-bottom: 1px solid #d6b161;
+  padding-bottom: 1px;
+  transition: border-bottom 0.3s, color 0.3s;
+  -webkit-transition: border-bottom 0.3s, color 0.3s;
+  -moz-transition: border-bottom 0.3s, color 0.3s;
+  -ms-transition: border-bottom 0.3s, color 0.3s;
+  -o-transition: border-bottom 0.3s, color 0.3s;
+}
+
+a:hover,
+a:active {
+  color: #555;
+  border-bottom: 1px solid transparent;
+}
+
+/* ---- BUTTONS ---- */
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 10px 30px;
+  font-weight: 400;
+  text-transform: capitalize;
+  /*Formattextlink*/
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+  -webkit-transition: background-color 0.3s, border 0.3s, color 0.3s;
+  -moz-transition: background-color 0.3s, border 0.3s, color 0.3s;
+  -ms-transition: background-color 0.3s, border 0.3s, color 0.3s;
+  -o-transition: background-color 0.3s, border 0.3s, color 0.3s;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.btn:hover,
+.btn:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background-color: #555;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"] {
+  background-color: #d6b161;
+  border: 1px solid #d6b161;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.btn-full:hover,
+.btn-full:active {
+  background-color: #555;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  /* background-color: teal; */
+  border: 1px solid #d6b161;
+  color: #d6b161;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  /* background-color: teal; */
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.btn-app:link,
+.btn-app:visited {
+  border: 0px;
+}
+
+/* ------------------------------------------------------- */
+/* DER */
+/* ------------------------------------------------------- */
+
+header {
+  /* Background di atas image linear-gradient */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(img/header2.jpg);
+  /* Background sesuai lebar halaman */
+  background-size: cover;
+  /* Posisi Element Header */
+  background-position: center;
+  height: 100vh;
+  /* Background tidak fixed di tempat tidak mengikuti scroll */
+  background-attachment: fixed;
+}
+
+/* text dalam header */
+.hero-text-box {
+  /*background-color: aqua;
+  */
+  width: 750px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  margin-top: 25px;
+  float: left;
+}
+
+.logo-black {
+  display: none;
+  height: 70px;
+  width: auto;
+  float: left;
+  margin-top: 15px;
+}
+
+.nav {
+  background-color: rgba(58, 58, 58, 0.96);
+  position: fixed;
+  padding-bottom: 15px;
+  width: 100%;
+  z-index: 9999;
+}
+/* Main Navigation */
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 55px;
+  z-index: 9999;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  color: #fff;
+  font-size: 90%;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
+  -webkit-transition: border-bottom 0.3s;
+  -moz-transition: border-bottom 0.3s;
+  -ms-transition: border-bottom 0.3s;
+  -o-transition: border-bottom 0.3s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid #d6b161;
+}
+
+/* Mobail Navigation */
+.mobile-nav-icon {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #fff;
+}
+
+/* Sticky Navigation */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: background-color 0.3s, box-shadow 0.3;
+  -webkit-transition: background-color 0.3s, box-shadow 0.3;
+  -moz-transition: background-color 0.3s, box-shadow 0.3;
+  -ms-transition: background-color 0.3s, box-shadow 0.3;
+  -o-transition: background-color 0.3s, box-shadow 0.3;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 1px #efefef;
+}
+
+.sticky .main-nav {
+  margin-top: 18px;
+  padding: 15px 0;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+  padding: 15px 0;
+  color: #555;
+}
+
+.sticky .logo {
+  display: none;
+}
+.sticky .logo-black {
+  display: block;
+}
+
+.main-nav-active li a {
+  border-bottom: 2px solid #d6b161;
+}
+
+/* ------------------------------------------------------- */
+/* MEALS SETUP */
+/* ------------------------------------------------------- */
+.section-meals {
+  padding: 0;
+}
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meal-photo {
+  width: 100%;
+  margin: 0;
+  background-color: black;
+  /* Menyembunyikan efek css 3 */
+  overflow: hidden;
+}
+
+/* Membuat lebar image 100% dari lebar class: meals-photo */
+.meal-photo img {
+  opacity: 0.7;
+  width: 100%;
+  height: 40vh;
+  /*Sesuailebarimage*/
+  object-fit: cover;
+  /*Css3membuatelemenmenjadilebar100%x1.15c*/
+  transform: scale(1.15);
+  transition: transform 0.5s, opacity 0.5s;
+  -webkit-transition: transform 0.5s, opacity 0.5s;
+  -moz-transition: transform 0.5s, opacity 0.5s;
+  -ms-transition: transform 0.5s, opacity 0.5s;
+  -o-transition: transform 0.5s, opacity 0.5s;
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
+}
+
+.meal-photo img:hover {
+  /*Css3membuatelemenmenjadilebar100%x1.15c*/
+  transform: scale(1.03);
+  opacity: 1;
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+}
+
+/* ------------------------------------------------------- */
+/* HOW IT WORKS */
+/* ------------------------------------------------------- */
+.section-steps {
+  background-color: rgb(238, 238, 238);
+}
+
+.section-steps .row {
+  margin-bottom: 20px;
+}
+
+/* selector is used to select the specified selector, only if it is the first child of its parent. (anak pertama dari induk) */
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 5%;
+  margin-top: 30px;
+}
+
+/* Selector matches every element that is the last child, of a particular type, of its parent (Elemen yang merupakan anak terakhir,)*/
+.steps-box:last-child {
+  text-align: left;
+  margin-top: 70px;
+}
+
+.app-screen {
+  width: 40%;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+
+/* Selector matches every element that is the last child, of a particular type, of its parent (Elemen yang merupakan anak terakhir,)*/
+.works-step:last-of-type {
+  margin-bottom: 80px;
+}
+
+.works-step div {
+  /* .number-step {
+  */
+  color: #d6b161;
+  border: 2px solid #d6b161;
+  display: inline-block;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  padding: 5px;
+  float: left;
+  font-size: 150%;
+  margin-right: 25px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* ------------------------------------------------------- */
+/* City */
+/* ------------------------------------------------------- */
+
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.city-feature {
+  margin-bottom: 15px;
+}
+
+/* ------------------------------------------------------- */
+/* TESTIMONIALS */
+/* ------------------------------------------------------- */
+
+.section-testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero2.jpg);
+  background-size: cover;
+  /* Color semua font */
+  color: #fff;
+  /* Background tidak fixed di tempat tidak mengikuti scroll */
+  background-attachment: fixed;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  text-align: justify;
+  line-height: 145%;
+  position: relative;
+}
+
+/* blockquote:before {
+  font-size: 500%;
+  content: "\201C";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -3px;
+} */
+
+cite {
+  display: block;
+  font-size: 90%;
+  margin-top: 25px;
+}
+
+cite img {
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  /*Elementmenjadiratatengah(mid,center),atasbawah*/
+  vertical-align: middle;
+}
+
+/* ------------------------------------------------------- */
+/* SIGN UP */
+/* ------------------------------------------------------- */
+
+/* .section-plans {
+  background-color: rgb(221, 221, 221);
+}
+
+.plan-box {
+  background-color: #fff;
+  padding: 20px 10px;
+
+}
+
+.section-plans ul:after {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  height: 1px;
+  width: 100%;
+  content: " ";
+  background-color: rgb(221, 221, 221);
+}
+
+.plan-box {
+  background-color: #fff;
+  padding: 20px 10px;
+
+}
+
+
+.plan-box h3 {
+  font-size: 120%;
+}
+
+.plan-price {
+  font-size: 320%;
+  font-weight: 200;
+  margin-bottom: 15px;
+  color: #d6b161;
+}
+
+
+
+.plan-price span {
+  font-size: 30%;
+  font-weight: 400;
+
+}
+
+.plan-price-meal {
+  font-size: 90%;
+}
+
+.plan-price-meal:after {
+  margin-top: 20px;
+  display: block;
+  height: 1px;
+  width: 100%;
+  content: " ";
+  background-color: rgb(221, 221, 221);
+
+}
+
+.plan-box ul,
+.plan-box li {
+  list-style: none;
+  padding: 10px;
+}
+
+.section-plans a {
+  display: inline-block;
+  text-align: center;
+} */
+
+.section-plans {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.plan-box {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 0 1px 1px #555;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.plan-box div {
+  padding: 15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-box p {
+  margin: 10px 20px;
+}
+
+/* membuat shadow */
+.plan-box div:first-child {
+  background-color: #fcfcfc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.plan-box div:last-child {
+  text-align: center;
+  border: 0px;
+}
+
+.plan-price {
+  font-size: 180%;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: #d6b161;
+}
+
+.plan-price span {
+  font-size: 30%;
+  font-weight: 400;
+}
+
+.plan-price-meal {
+  text-transform: capitalize;
+  font-size: 80%;
+  margin-bottom: 5px;
+  line-height: 200%;
+}
+
+.plan-box ul {
+  list-style: none;
+}
+
+.plan-box ul li {
+  padding: 5px 0;
+}
+
+/* ------------------------------------------------------- */
+/* FORM */
+/* ------------------------------------------------------- */
+
+form .contact-form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="checkbox"] {
+  margin: 10px 5px 10px 0;
+}
+
+input[type="submit"] {
+  border: 0px;
+}
+
+/* Menghilangkan line di input data */
+*:focus {
+  outline: none;
+}
+
+/* ------------------------------------------------------- */
+/* FOOTER */
+/* ------------------------------------------------------- */
+
+footer {
+  background-color: #333;
+  padding: 50px;
+  font-size: 80%;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-links {
+  list-style: none;
+  float: right;
+}
+
+/* Membuat menjadi horizontal */
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+  margin-right: 0px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #888;
+  transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  color: #ddd;
+}
+
+/* .social-links li a:hover,
+.social-links li a:active {
+  font-size: 160%;
+} */
+
+/* https://www.designpieces.com/2012/12/social-media-colours-hex-and-rgb/ */
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+  transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+}
+
+.ion-social-facebook:hover {
+  color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+  color: #00aced;
+}
+
+.ion-social-googleplus:hover {
+  color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+  color: #c32aa3;
+}
+
+footer p {
+  color: #888;
+  text-align: center;
+  font-size: 90%;
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+
+.sticky .link.active {
+  border-bottom: 2px solid #d6b161;
+}
+
+/* ------------------------------------------------------- */
+/* Animation */
+/* ------------------------------------------------------- */
+
+.js--wp-1,
+.js--wp-2-1,
+.js--wp-2-2,
+.js--wp-3,
+.js--wp-4 {
+  opacity: 0;
+  animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2-1.animated,
+.js--wp-2-2.animated,
+.js--wp-3.animated,
+.js--wp-4.animated {
+  opacity: 1;
+}
+/* go to top */
+.top {
+  position: fixed;
+  right: 20px;
+  bottom: 45px;
+  align-content: center;
+  align-items: center;
+  font-size: 200%;
+  padding: 2px;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+}
+
+.top a,
+.top a:hover {
+  color: #d6b161;
+  border: none;
+}
+
+.pilih-program {
+  text-align: center;
+  padding: 0 10%;
+}
+
+.section-cities .col {
+  text-align: center;
+}
+
+.section-contact {
+  background-color: rgb(238, 238, 238);
+}
+
+.section-contact .col {
+  text-align: center;
+  font-size: 90%;
+  padding: 20px;
+}
+
+.section-form {
+  line-height: 145%;
+  text-align: justify;
+  font-weight: 400;
+}
+
+.section-form .col:last-of-type {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+
+.section-form .span-1-of-3 {
+  text-align: right;
+}
+
+p.content-one {
+  display: none;
+}
